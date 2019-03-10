@@ -1,0 +1,62 @@
+body {
+  padding: 2em;
+}
+#container {
+  width: 500px;
+  height: 500px;
+  margin: 10px auto;
+  border: 1px solid #000;
+  position: relative;
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+}
+.item {
+  width: 120px;
+  height: 90px;
+  line-height: 60px;
+  text-align: center;
+  position: absolute;
+  animation: spin 10s linear infinite reverse;
+}
+
+/* @keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+} */
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.item:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}

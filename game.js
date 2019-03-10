@@ -7,7 +7,8 @@ const cards = [
   { front: 'Pen', back: 'Ручка' },
   { front: 'Nice', back: 'Прекрасный' },
   { front: 'TV', back: 'Телевизор' },
-  { front: 'Mobile', back: 'Мобильный' }
+  { front: 'Mobile', back: 'Мобильный' },
+  { front: 'Curious', back: 'Любопытный' }
 ];
 
 var container = document.getElementById('container');
@@ -45,12 +46,19 @@ const createCard = () => {
     // Append flip card inner to item
     item.appendChild(flipCardInner);
     container.appendChild(item);
-    console.log(item);
+    //console.log(container);
   }
-  console.log(container);
+  //console.log(container);
 };
 
 createCard();
+
+$('.item .flip-card-inner').click(function() {
+  $(this)
+    .closest('.item')
+    .toggleClass('hover');
+  $(this).css('transform, rotateX(180deg)');
+});
 
 var radius = 250; // adjust to move out items in and out
 var inclination = 0;

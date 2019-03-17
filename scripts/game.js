@@ -52,12 +52,21 @@ const createCard = () => {
 };
 
 createCard();
+document.querySelector('.dice').style.display = 'none';
 
 $('.item .flip-card-inner').click(function() {
   $(this)
     .closest('.item')
     .toggleClass('hover');
   $(this).css('transform, rotateX(180deg)');
+});
+
+document.querySelector('.roll-btn').addEventListener('click', function() {
+  let dice = Math.floor(Math.random() * 6) + 1;
+  let diceDOM = document.querySelector('.dice');
+  diceDOM.style.display = 'block';
+  diceDOM.src = '/static' + '/images' + '/dice-' + dice + '.png';
+  console.log('dice-' + dice + '.png');
 });
 
 var radius = 250; // adjust to move out items in and out

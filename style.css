@@ -60,3 +60,16 @@ body {
   color: white;
   transform: rotateY(180deg);
 }
+
+.dice-holder {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  /* background-color: red; */
+  right: 3px;
+  top: 3px;
+}
+
+.dice {
+  width: 100px;
+}
